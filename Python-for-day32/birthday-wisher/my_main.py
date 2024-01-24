@@ -15,7 +15,7 @@ PASSWORD = "not setting"
 
 birth_info = pd.read_csv("birthdays.csv")
 birth_list = birth_info.to_dict(orient="records")
-# to_dict(orient="records") 返回的是一个列表
+# to_dict(orient="records") return to a list
 
 
 today = dt.datetime.now()
