@@ -24,7 +24,7 @@ def generate():
     password = "".join(password_list)
     # use join() to combine all the characters, but it must need a separator
     password_input.insert(0, password)
-    pyperclip.copy(password)  # 自动复制，不需要再全选，还有paste()
+    pyperclip.copy(password)
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
