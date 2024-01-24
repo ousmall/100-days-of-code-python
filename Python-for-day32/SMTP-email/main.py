@@ -12,7 +12,6 @@ day_of_week = now.weekday()
 
 with open("quotes.txt") as file:
     quotes = file.readlines()
-# quotes = [quote.strip() for quote in quotes]  # not necessary
     today_soup = random.choice(quotes)
 
 
