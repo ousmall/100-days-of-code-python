@@ -21,8 +21,6 @@ birth_list = birth_info.to_dict(orient="records")
 today = dt.datetime.now()
 matching_record = [record for record in birth_list if
                    record['day'] == today.day and record['month'] == today.month]
-# print(matching_record) =
-# [{'name': 'Henry', 'email': 'henryfan@gmail.com', 'year': 2015, 'month': 1, 'day': 22}]
 
 matching_name = matching_record[0]["name"]
 matching_email = matching_record[0]["email"]
