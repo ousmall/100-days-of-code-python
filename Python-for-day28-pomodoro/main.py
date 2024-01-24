@@ -10,7 +10,7 @@ FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
-circulation = 0  # repetitions
+circulation = 0
 time_count = None
 
 
@@ -50,18 +50,14 @@ def start_count():
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
-    count_min = math.floor(count / 60)  # 向下取整
+    count_min = math.floor(count / 60) 
     count_sec = count % 60
-    '''if count_sec < 10:
-        count_sec = f"0{count_sec}"'''  # 这个是老师的方法
 
     canvas.itemconfig(timer_text, text=f"{count_min:02d}:{count_sec:02d}")
-    # canvas.itemconfig(item_id, option1=value1, option2=value2, ...),用于配置和修改Canvas上的图形项（item）
-    # f"{number:02d}"显示两位数字
+  
     if count > 0:
         global time_count
         time_count = window.after(1000, count_down, count - 1)
-        # window.after(delay, callback, *args, **kwargs),安排一个函数在指定的毫秒数之后执行，实现定时操作
         canvas.itemconfig(timer_text, fill="white")
     if count < 60:
         canvas.itemconfig(timer_text, fill="RED")
