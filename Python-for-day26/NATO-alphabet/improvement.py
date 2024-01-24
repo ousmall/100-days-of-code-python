@@ -12,7 +12,6 @@ def generate():
     # if it not exists, print out something
     try:
         words = [new_data[letter] for letter in user_enter]
-        # 原代码中 if letter in new_data要删掉，因为如果不存在，就直接生成空的list
     except KeyError:
         print("Sorry, only letters in the NATO alphabet are allowed.")
         generate()
