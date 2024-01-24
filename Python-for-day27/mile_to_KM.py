@@ -4,8 +4,6 @@ from tkinter import *
 def button_clicked():
     new_value = mile_input.get()
     output_label.config(text=float(new_value) * 1.609)
-    # km = float(new_value) * 1.609
-    # output_label.config(text=f"{km}") 老师把value转换成str再显示
 
 
 window = Tk()
