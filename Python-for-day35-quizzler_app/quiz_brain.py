@@ -1,0 +1,33 @@
+import html
+
+
+class QuizBrain:
+
+    def __init__(self, q_list):
+        self.question_number = 0
+        self.score = 0
+        self.question_list = q_list
+        self.current_question = None
+
+    def still_has_questions(self):
+        return self.question_number < len(self.question_list)
+
+    def next_question(self):
+        self.current_question = self.question_list[self.question_number]
+        self.question_number += 1
+        q_text = html.unescape(self.current_question.text)
+        # html 模块提供的一个函数，用于将 HTML 实体转换为它们对应的字符
+        return f"Q.{self.question_number}: {q_text}"
+
+    def check_answer(self, user_answer):
+        correct_answer = self.current_question.answer
+        if user_answer == correct_answer:
+            self.score += 1
+            return True
+        else:
+            return False
+
+    def reset_quiz(self):  # question start from 0
+        self.question_number = 0
+        self.score = 0
+        self.current_question = None
