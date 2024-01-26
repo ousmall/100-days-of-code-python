@@ -1,16 +1,17 @@
 import requests as rs
 from datetime import datetime, timedelta
+# I didn't apply for twilio API, just ignore it
 
 COMMODITY = "WTI"
 
 # Alpha API
 alpha_api = "https://www.alphavantage.co/query"
-alpha_api_key = "3CUN8A0QT2I8U132"
+alpha_api_key = "keep in secret"
 
 
 # News API
 News_api = "https://newsapi.org/v2/everything"
-News_api_key = "b129020a0aa041ed837175065e472669"
+News_api_key = "keep in secret"
 
 
 # news comes within 2 days
