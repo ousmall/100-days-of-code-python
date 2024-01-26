@@ -7,8 +7,8 @@ COMMODITY = "WTI"
 alpha_api = "https://www.alphavantage.co/query"
 alpha_api_key = "3CUN8A0QT2I8U132"
 
-# News API
 
+# News API
 News_api = "https://newsapi.org/v2/everything"
 News_api_key = "b129020a0aa041ed837175065e472669"
 
