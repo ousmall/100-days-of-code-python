@@ -10,30 +10,28 @@ from tkinter import messagebox
 FONT = ("Times New Roman", 12, "normal")
 
 # Parts of Nutritionix
-
-MY_ID = "78aff6a0"
-MY_API = "d9b8b563a5ba760f7fcb686ca1c6494c"
+MY_ID = "secrete"
+MY_API = "secrete"
 Host_domain = "https://trackapi.nutritionix.com"
 
 # natural language
 nutrient_endpoint = "/v2/natural/nutrients"
 exercise_endpoint = "/v2/natural/exercise"
 
+
 # Parts of Sheet
 MAIN_ENDPOINT = "https://api.sheety.co/"
-SHEET_API = "61ae00aac812b0b5afc6a35f9d541aed"
+SHEET_API = "secrete"
 project = "nutritionProject"
 sheet_name = "sheet1"
 object_ID = "num"  # row 1 or 2 or something like that
-TOKEN = "youwillbebetterthanbefore"
+TOKEN = "secrete"
 
 get_post_endpoint = f"{MAIN_ENDPOINT}{SHEET_API}/{project}/{sheet_name}"
 put_delete_endpoint = f"{MAIN_ENDPOINT}{SHEET_API}/{project}/{sheet_name}/{object_ID}"
 
 date = datetime.today().date().strftime("%d/%m/%Y")
 time = datetime.today().time().strftime("%I:%M%p")
-
-
 # strptime() convert str into date type
 
 
