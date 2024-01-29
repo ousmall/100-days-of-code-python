@@ -6,13 +6,13 @@ from datetime import datetime
 # Parts of Nutritionix
 
 # private information
-MY_WEIGHT = "48"
-MY_HEIGHT = "158"
-AGE = "40"
+MY_WEIGHT = "secrete"
+MY_HEIGHT = "secrete"
+AGE = "secrete"
 
 # Nutritionix setting
-MY_ID = "78aff6a0"
-MY_API = "d9b8b563a5ba760f7fcb686ca1c6494c"
+MY_ID = "secrete"
+MY_API = "secrete"
 Host_domain = "https://trackapi.nutritionix.com"
 
 # natural language
@@ -41,11 +41,11 @@ n_data = n_response.json()
 # Parts of Sheet
 
 MAIN_ENDPOINT = "https://api.sheety.co/"
-SHEET_API = "61ae00aac812b0b5afc6a35f9d541aed"
+SHEET_API = "secrete"
 project = "nutritionProject"
 sheet_name = "sheet1"
 object_ID = "num"  # row 1 or 2 or something like that
-TOKEN = "youwillbebetterthanbefore"
+TOKEN = "secrete"
 
 get_post_endpoint = f"{MAIN_ENDPOINT}{SHEET_API}/{project}/{sheet_name}"
 put_delete_endpoint = f"{MAIN_ENDPOINT}{SHEET_API}/{project}/{sheet_name}/{object_ID}"
