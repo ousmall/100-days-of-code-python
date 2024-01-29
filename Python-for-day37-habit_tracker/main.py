@@ -1,7 +1,7 @@
 import requests as rs
 from datetime import datetime, timedelta
 
-TOKEN = "youwillbebetterthanbefore"
+TOKEN = "secrete"
 USERNAME = "smallou"
 GRAPH_ID = "first-graph-2024"
 
