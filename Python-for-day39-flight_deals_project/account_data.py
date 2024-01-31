@@ -1,10 +1,10 @@
 # Sheety
 
-SHEETY_TOKEN = "youwillbebetterthanbefore"
-SHEET_API = "61ae00aac812b0b5afc6a35f9d541aed"
+SHEETY_TOKEN = "use_your_own_data"
+SHEET_API = "use_your_own_data"
 PROJECT = "flightDealsProject"
 SHEET_NANE = "prices"
 SHEET_URL = f"{SHEET_API}/{PROJECT}/{SHEET_NANE}"
 
 # Kiwi Flight Search API credentials, from https://partners.kiwi.com/
-KIWI_API_KEY = "wy6KDVDG44VOH2SSbt4FEZgSWeGnqV0z"
+KIWI_API_KEY = "use_your_own_data"
