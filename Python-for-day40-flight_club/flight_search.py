@@ -1,0 +1,88 @@
+import requests
+from flight_data import FlightData
+import account_data
+
+KIWI_ENDPOINT = "https://tequila-api.kiwi.com"
+KIWI_API_KEY = account_data.KIWI_API_KEY
+
+
+class FlightSearch:
+
+    def __init__(self):
+        self.api_url = KIWI_ENDPOINT
+        self.header = KIWI_API_KEY
+
+    # get IATA code with "Locations API"
+    # https://tequila.kiwi.com/portal/docs/tequila_api/locations_api
+    def get_destination_code(self, city_name):
+        location_endpoint = f"{self.api_url}/locations/query"
+        headers = {"apikey": self.header}
+        query = {"term": city_name, "location_types": "city"}
+        response = requests.get(url=location_endpoint, headers=headers, params=query)
+        results = response.json()["locations"]
+        code = results[0]["code"]
+        return code
+
+    # search information with "search API"
+    def check_flights(self, origin_city_code, destination_city_code,
+                      from_time, to_time):
+        headers = {"apikey": self.header}
+        query = {
+            "fly_from": origin_city_code,
+            "fly_to": destination_city_code,
+            "date_from": from_time.strftime("%d/%m/%Y"),
+            "date_to": to_time.strftime("%d/%m/%Y"),
+            "nights_in_dst_from": 7,
+            "nights_in_dst_to": 28,
+            "flight_type": "round",
+            "one_for_city": 1,
+            "max_stopovers": 0,
+            "curr": "CAD"
+        }
+
+        response = requests.get(url=f"{self.api_url}/v2/search",
+                                headers=headers, params=query,)
+
+        try:
+            data = response.json()["data"][0]
+        except IndexError:
+            # one more try when no direct flight
+            query["max_stopovers"] = 1
+            response = requests.get(url=f"{self.api_url}/v2/search",
+                                    headers=headers, params=query, )
+
+            try:
+                data = response.json()["data"][0]
+            except IndexError:
+                print(f"No direct flights found for {destination_city_code} "
+                      f"even with one stopover.")
+                return None
+            else:
+                flight_data = FlightData(
+                    price=data["price"],
+                    origin_city=data["route"][0]["cityFrom"],
+                    origin_airport=data["route"][0]["flyFrom"],
+                    destination_city=data["route"][0]["cityTo"],
+                    destination_airport=data["route"][0]["flyTo"],
+                    depart_date=data["route"][0]["local_departure"].split("T")[0],
+                    return_date=data["route"][1]["local_departure"].split("T")[0],
+                    stop_overs=1,
+                    via_city=data["route"][0]["cityTo"]
+                )
+                print(f"Found a flight to {flight_data.destination_city} "
+                      f"for CA${flight_data.price} via {flight_data.via_city}")
+                return flight_data
+
+        else:
+            flight_data = FlightData(
+                price=data["price"],
+                origin_city=data["route"][0]["cityFrom"],
+                origin_airport=data["route"][0]["flyFrom"],
+                destination_city=data["route"][0]["cityTo"],
+                destination_airport=data["route"][0]["flyTo"],
+                depart_date=data["route"][0]["local_departure"].split("T")[0],
+                return_date=data["route"][1]["local_departure"].split("T")[0]
+            )
+            # print(f"Found a direct flight to {flight_data.destination_city} "
+            #       f"for CA${flight_data.price}")
+            return flight_data
