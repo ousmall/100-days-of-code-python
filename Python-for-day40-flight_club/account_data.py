@@ -1,16 +1,15 @@
 # Sheety
 
-SHEETY_TOKEN = "youwillbebetterthanbefore"
-SHEET_API = "61ae00aac812b0b5afc6a35f9d541aed"
+SHEETY_TOKEN = "use your own one"
+SHEET_API = "use your own one"
 PROJECT = "flightDealsProject"
 SHEET_URL = f"{SHEET_API}/{PROJECT}/"
 
 
-# Kiwi Flight Search API credentials, from https://partners.kiwi.com/
-KIWI_API_KEY = "wy6KDVDG44VOH2SSbt4FEZgSWeGnqV0z"
+# Kiwi Flight Search API
+KIWI_API_KEY = "use your own one"
 
 # google SMTP
-SMTP_USER = "smallouforme@gmail.com"
-SMTP_PASS = "vwvepjpzahhreglr"
-# sender name and email address for the notification emails
-SENDER_ADDRESS = "smallouforme@gmail.com"
+SMTP_USER = "use your own one"
+SMTP_PASS = "use your own one"
+SENDER_ADDRESS = "use your own one"
