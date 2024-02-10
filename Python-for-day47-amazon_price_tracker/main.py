@@ -8,7 +8,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SECURITY = "TLS"  # SSL/TLS
 MY_EMAIL = "smallouforme@gmail.com"
-MY_PASS = "vwvepjpzahhreglr"
+MY_PASS = "secrete"
 EXPECTED_PRICE = 499
 
 # Todo 1: get price of the stuff we want from Amazon
@@ -17,12 +17,10 @@ amazon_ipad_url = ("https://www.amazon.com/Apple-2022-10-9-inch-iPad-Wi-Fi/dp/B0
                    "=p_89%3AApple%2Cp_n_condition-type%3A2224371011&rnid=2224369011&s"
                    "=electronics&sprefix=%2Caps%2C250&sr=1-2&th=1")
 headers = {
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) "
-                  "Chrome/121.0.0.0 Safari/537.36",
+    "user-agent": "use your own one",
     "accept-language": "en-US,en;q=0.5",
     "sec-ch-ua-platform": "Windows",
-    "Accept-Encoding": "gzip, deflate, br"
+    "Accept-Encoding": "use your own one"
 }
 
 # my window system need to alternate the encode method, just ask chatGPT
