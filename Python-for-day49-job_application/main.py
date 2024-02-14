@@ -4,9 +4,9 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 JOB_URL = "https://www.linkedin.com/"
-MY_EMAIL = "smallouforme@gmail.com"
-MY_PASSWORD = "078376266SMALLou"
-MY_PHONE = "9024833326"
+MY_EMAIL = "your own email"
+MY_PASSWORD = "your password"
+MY_PHONE = "your phone number"
 MY_JOB = "python developer"
 
 
