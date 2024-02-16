@@ -9,6 +9,8 @@ from time import sleep
 INSTAGRAM_URL = "https://www.instagram.com/"
 THEME = "python"
 
+# the pathways and tags change all the time, thus sometimes the code can't work
+
 
 class InstaFollow:
 
