@@ -1,7 +1,7 @@
 from insta_follow import InstaFollow
 
-FB_ACCOUNT = "smallouforme@gmail.com"
-FB_PASSWORD = "078376266SMALLou"
+FB_ACCOUNT = "your own email"
+FB_PASSWORD = "your password"
 
 robot = InstaFollow(FB_ACCOUNT, FB_PASSWORD)
 
