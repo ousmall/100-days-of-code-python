@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Small's appetizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>My Cooking Blog</h1></div>
+           </div>
+        <div class="content">
+            <div class="card">
+            {% for post in posts %}
+                {% if post["id"] == index %}
+                    {% set current_post = post %}
+                    <h2>{{ current_post["title"] }}</h2>
+                    <h3>{{ current_post["subtitle"] }}</h3>
+                    <p>{{ current_post["body"] }}</p>
+                    <a href="{{ url_for('home') }}">Back</a>
+                {% endif %}
+            {% endfor %}
+            </div>
+
+    </div>
+</div>
+</body>
+<footer>
+    <p>Modify By Small ♥️ at Home.</p>
+</footer>
+</html>
