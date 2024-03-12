@@ -8,7 +8,7 @@ from wtforms import StringField, SubmitField, DecimalField
 from wtforms.validators import DataRequired, NumberRange
 import requests
 
-TMDB_API_KEY = "998866f27ccf5a7a83c9d91fde009ae7"
+TMDB_API_KEY = "you-own-one"
 
 TMDB_SEARCH_URL = "https://api.themoviedb.org/3/search/movie"
 TMDB_DETAIL_URL = "https://api.themoviedb.org/3/movie/"
@@ -16,10 +16,7 @@ TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/original"
 
 headers = {
     "accept": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9"
-                     ".eyJhdWQiOiI5OTg4NjZmMjdjY2Y1YTdhODNjOWQ5MWZkZTAwOWFlNyIsInN1YiI6IjY1ZWR"
-                     "jNWIwNzg1NzBlMDE4N2ZjZTk4NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ."
-                     "YxXpoYQgxQXbNjuqSTSq-A1g1ORZHD4cGRD4P_a-Cjo"
+    "Authorization": "Bearer you-own-one"
 }
 
 app = Flask(__name__)
