@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rating Editor</title>
+</head>
+<body>
+    <div>
+      <form action="edit" method="POST">
+        <p>Book Name: {{ book.title }}</p>
+        <p>Current Rating: {{ book.rating }}</p>
+        <input hidden="hidden" name="id" value="{{ book.id }}">
+        <!--     the value book.id comes from url     -->
+        <input type="text" name="rating" placeholder="New Rating">
+        <button type="submit">Change Rating</button>
+      </form>
+    </div>
+</body>
+</html>
