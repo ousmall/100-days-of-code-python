@@ -106,7 +106,7 @@ def add_cafe():
                 has_sockets=bool(request.form['has_sockets']),
                 can_take_calls=bool(request.form['can_take_calls'])
             )
-            # request.form 是 Flask 中的一个属性，用于访问客户端通过 POST 请求发送的表单数据。
+            # request.form is a property in Flask used to access form data sent by the client through a POST request.
         except KeyError:
             return jsonify(error={"Wrong request": "Some or all information is incorrect or missing."}), 404
         else:
