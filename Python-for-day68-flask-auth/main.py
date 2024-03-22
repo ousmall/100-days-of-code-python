@@ -74,8 +74,6 @@ def register():
                 return redirect(url_for('login'))
 
             else:
-                # PBKDF2 是一个被广泛采用的密码哈希函数，并且通常是许多安全标准（如 PKCS#5）的一部分，
-                # 但 Scrypt 在防止特定类型的攻击（如硬件加速攻击）方面更具优势，因此在某些情况下，更值得推荐。
                 # https://werkzeug.palletsprojects.com/en/3.0.x/utils/#module-werkzeug.security
                 new_user = User(
                     name=request.form.get('name'),
