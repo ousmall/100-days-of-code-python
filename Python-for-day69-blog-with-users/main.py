@@ -10,8 +10,6 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from hashlib import md5
-# adding more function to the blog, see here:
-# add post time in comment: https://gist.github.com/TheMuellenator/3268172ea5e2d0f90f6bca96d30f3a72
 
 
 # CREATE GRAVATAR MANUALLY
@@ -41,10 +39,6 @@ def only_commenter(function):
             return abort(403)
         return function(*args, **kwargs)
     return check
-
-
-# decorator: https://flask.palletsprojects.com/en/2.3.x/patterns/viewdecorators/
-# abort: https://flask.palletsprojects.com/en/2.3.x/api/#flask.abort
 
 
 app = Flask(__name__)
